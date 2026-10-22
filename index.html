@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>慈濟大學傳播學系暨碩士班 | Department of Communication Studies</title>
+    <style>
+        /* ==========================================
+           中式簡約大氣藝術風格 Internal CSS
+           色調：藍綠淡雅 (黛藍、青瓷綠、竹綠、墨灰)
+           字體：行書/楷書風格
+           ========================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+TC:wght@300;400;600;700&display=swap');
+
+        :root {
+            --bg-base: #f4f8f6;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --primary-dark: #1b3835;     /* 深藍綠 */
+            --primary-green: #2e6a59;    /* 竹綠 */
+            --accent-teal: #4b8f80;     /* 水青 */
+            --accent-gold: #c5a059;     /* 雅金 */
+            --text-main: #2b3030;       /* 墨灰 */
+            --text-muted: #5e6b66;     /* 淡墨 */
+            --font-xing: 'Ma Shan Zheng', 'Xingkai SC', 'STXingkai', '標楷體', cursive, serif;
+            --font-serif: 'Noto Serif TC', 'Songti TC', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: var(--font-serif);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(46, 106, 89, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(27, 56, 53, 0.07) 0%, transparent 50%);
+        }
+
+        /* 背景水墨圖騰裝飾 */
+        .bg-artwork {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.12;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'%3E%3Cpath d='M0,400 Q250,250 500,380 T1000,300 L1000,600 L0,600 Z' fill='%202e6a59'/%3E%3Cpath d='M0,480 Q350,300 700,450 T1400,380 L1400,600 L0,600 Z' fill='%201b3835'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        /* 頂部導覽列 */
+        header {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid rgba(46, 106, 89, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-seal {
+            width: 42px;
+            height: 42px;
+            background: var(--primary-green);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-xing);
+            font-size: 1.5rem;
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.4);
+        }
+
+        .logo-title {
+            font-family: var(--font-xing);
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            letter-spacing: 2px;
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* 英雄區塊 HERO */
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, rgba(238,245,242,0.6) 0%, rgba(244,248,246,0) 100%);
+        }
+
+        .hero-title {
+            font-family: var(--font-xing);
+            font-size: 3.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        .hero-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-divider::before, .hero-divider::after {
+            content: '';
+            height: 1px;
+            width: 80px;
+            background: linear-gradient(90deg, transparent, var(--accent-teal), transparent);
+        }
+
+        .hero-divider span {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+
+        /* 主要內容容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 版塊標題 */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: var(--font-xing);
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            display: inline-block;
+            position: relative;
+            padding: 0 1rem;
+        }
+
+        .section-title::before, .section-title::after {
+            content: '◆';
+            color: var(--accent-gold);
+            font-size: 1rem;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        /* 網格卡片 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid rgba(46, 106, 89, 0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-green);
+            opacity: 0.7;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(46, 106, 89, 0.1);
+        }
+
+        .card-title {
+            font-family: var(--font-xing);
+            font-size: 1.6rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed rgba(46, 106, 89, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .card-text {
+            color: var(--text-main);
+            font-size: 0.98rem;
+            text-align: justify;
+        }
+
+        /* 特色宣傳區塊（學生作品亮點連結） */
+        .works-highlight {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
+            color: #fff;
+            border-radius: 12px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(27, 56, 53, 0.2);
+        }
+
+        .works-highlight h2 {
+            font-family: var(--font-xing);
+            font-size: 2.8rem;
+            color: #f0f7f4;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .works-highlight p {
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+        }
+
+        .btn-artwork {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: #fff;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn-artwork:hover {
+            background: #d4b06a;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.6);
+        }
+
+        /* 最新訊息列表 */
+        .news-list {
+            list-style: none;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid rgba(46, 106, 89, 0.15);
+            padding: 1.5rem 2rem;
+        }
+
+        .news-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-tag {
+            background: rgba(46, 106, 89, 0.1);
+            color: var(--primary-green);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .news-link {
+            text-decoration: none;
+            color: var(--text-main);
+            flex-grow: 1;
+            transition: color 0.2s ease;
+        }
+
+        .news-link:hover {
+            color: var(--primary-green);
+        }
+
+        /* 頁尾 */
+        footer {
+            background: var(--primary-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--accent-gold);
+            margin-top: 4rem;
+        }
+
+        footer h3 {
+            font-family: var(--font-xing);
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 響應式 */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero-title {
+                font-size: 2.4rem;
+            }
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-artwork"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-seal">傳</div>
+                <div>
+                    <span class="logo-title">慈濟大學傳播學系</span>
+                    <span class="logo-sub">Department of Communication Studies</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#about">系所簡介</a></li>
+                    <li><a href="#features">教學特色</a></li>
+                    <li><a href="#news">最新消息</a></li>
+                    <li><a href="studentwork.html">學生作品</a></li>
+                    <li><a href="#contact">聯絡資訊</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 class="hero-title">人文人文 ‧ 數位敘事 ‧ 影響力</h1>
+        <div class="hero-divider"><span>葉落水流 靜心傳播</span></div>
+        <p class="hero-subtitle">立足花蓮山海之間，結合當代媒體科技與人文關懷，培養具備國際視野與社會責任的傳播人才。</p>
+    </section>
+
+    <main class="container">
+        <!-- 系所簡介 -->
+        <section id="about" style="margin-bottom: 4rem;">
+            <div class="section-header">
+                <h2 class="section-title">系所宗旨與願景</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3 class="card-title">設系宗旨</h3>
+                    <p class="card-text">本系以人文精神為核心，培育兼具數位媒體製作能力與社會關懷之專業人才。強調真實紀錄、理性批判與正面影響力。</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">多元課程規劃</h3>
+                    <p class="card-text">涵蓋影音創作、新聞報導、數位媒體整合與聲音敘事。設有「人文影像傳播」與「聲音敘事與影響力創作」等專業學分學程。</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">專業實作設施</h3>
+                    <p class="card-text">擁有完善的多媒體教室、實習廣播電臺與專業攝影棚，提供學生從學術理論到業界實務接軌的優質學習環境。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 學生作品區塊導引 -->
+        <section class="works-highlight">
+            <h2>學生優秀作品展</h2>
+            <p>逐光而行，以創作回應世界。探索本系學生在影音創作、新聞專題、廣播節目及畢業展中的精彩表現。</p>
+            <a href="studentwork.html" class="btn-artwork">點擊進入學生作品展覽館 ➔</a>
+        </section>
+
+        <!-- 最新消息 -->
+        <section id="news" style="margin-bottom: 4rem;">
+            <div class="section-header">
+                <h2 class="section-title">榮譽與最新動態</h2>
+            </div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-tag">畢展資訊</span>
+                    <a href="studentwork.html" class="news-link">傳播學系畢業成果展: 以「逐幀」為題，邀請您一同鑑賞學生創作成果。</a>
+                </li>
+                <li class="news-item">
+                    <span class="news-tag">校友榮譽</span>
+                    <a href="#" class="news-link">恭賀！本系校友潘信安榮獲入圍第61屆金鐘獎《節目類：攝影獎》。</a>
+                </li>
+                <li class="news-item">
+                    <span class="news-tag">學生獲獎</span>
+                    <a href="#" class="news-link">恭喜！大四同學黃映瑜、許沁恩入圍第23屆金聲獎校園廣播節目競賽「教育專題報導獎」。</a>
+                </li>
+                <li class="news-item">
+                    <span class="news-tag">永續報導</span>
+                    <a href="#" class="news-link">恭喜！黃映瑜、周慈恩同學作品《被撐起的日常-超高齡社會下的照顧現場》入圍第十屆全球華文永續報導獎。</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h3>慈濟大學傳播學系暨碩士班</h3>
+        <p>地址：970 花蓮市介仁街67號 (介仁校區)</p>
+        <p>電話：03-8572677 #35605</p>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.6;">© Tzu Chi University Department of Communication Studies. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // 平滑捲動效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
