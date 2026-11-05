@@ -151,6 +151,22 @@
          display: block;
 
         }
+        
+        .podcast-photo-container {
+            width: 100%;
+            max-width: 600px; /* 可依據你版塊的實際寬度調整 */
+            height: auto;
+            overflow: hidden;
+            border-radius: 8px; /* 邊角微調，非必要 */
+        }
+
+        .podcast-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持比例並自動填滿版塊 */
+         display: block;
+
+        }
 
         .hero-text-box p {
             color: var(--text-sub);
@@ -343,7 +359,8 @@
                     <p>著重紀錄片拍攝、影音新聞與紀錄式敘事能力，強調真實影像中傳遞的人文情懷。</p>
                 </div>
                 <div class="grid-item">
-                    <div class="img-placeholder-sm">[ 預留圖片：聲音播音 ]</div>
+                    <div class="podcast-photo-container">
+  <img src="graph/podcast.jpg" alt="學生作品" class="podcast-photo" /></div></div>
                     <div class="item-num">FEATURE 02</div>
                     <h3>聲音敘事學程</h3>
                     <p>培育聲音劇場、Podcasting 與廣播企劃人才，透過聲響探索當代社會議題。</p>
