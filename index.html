@@ -216,6 +216,34 @@
   object-fit: cover;    /* 關鍵：自動裁切並填滿容器，保持比例不變形 */
   display: block;       /* 消除圖片下方預設的微小空白隙縫 */
 }
+        .podcast-photo-container {
+  width: 100%;          /* 隨父層寬度縮放 */
+  max-width: 100%;      /* 不超過父層 */
+  height: 160px;        /* 請依據你的設計自訂高度，例如 250px 或 300px */
+  overflow: hidden;     /* 關鍵：徹底切除超出容器範圍的內容 */
+  border-radius: 8px;   /* 可選：若需要圓角效果 */
+}
+
+.podcast-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* 關鍵：自動裁切並填滿容器，保持比例不變形 */
+  display: block;       /* 消除圖片下方預設的微小空白隙縫 */
+}
+        .video-photo-container {
+  width: 100%;          /* 隨父層寬度縮放 */
+  max-width: 100%;      /* 不超過父層 */
+  height: 160px;        /* 請依據你的設計自訂高度，例如 250px 或 300px */
+  overflow: hidden;     /* 關鍵：徹底切除超出容器範圍的內容 */
+  border-radius: 8px;   /* 可選：若需要圓角效果 */
+}
+
+.video-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* 關鍵：自動裁切並填滿容器，保持比例不變形 */
+  display: block;       /* 消除圖片下方預設的微小空白隙縫 */
+}
         
         /* 學生作品導覽區塊 (CTA) */
         .cta-box {
@@ -341,13 +369,15 @@
                     <p>著重紀錄片拍攝、影音新聞與紀錄式敘事能力，強調真實影像中傳遞的人文情懷。</p>
                 </div>
                 <div class="grid-item">
-                    <div class="img-placeholder-sm">[ 預留圖片：聲音播音 ]</div>
+                    <div class="podcast-photo-container">
+  <img src="graph/podcast.jpg" alt="聲音傳播" class="podcast-photo" /></div>
                     <div class="item-num">FEATURE 02</div>
                     <h3>聲音敘事學程</h3>
                     <p>培育聲音劇場、Podcasting 與廣播企劃人才，透過聲響探索當代社會議題。</p>
                 </div>
                 <div class="grid-item">
-                    <div class="img-placeholder-sm">[ 預留圖片：數位媒體 ]</div>
+                    <div class="video-photo-container">
+  <img src="graph/video.jpg" alt="數位媒體" class="video-photo" /></div>
                     <div class="item-num">FEATURE 03</div>
                     <h3>跨領域媒體實作</h3>
                     <p>結合數位傳播、資訊圖表與社群行銷，接軌新媒體世代的多元創作趨勢。</p>
