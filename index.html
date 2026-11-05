@@ -111,9 +111,20 @@
             position: relative;
         }
 
-        .img-placeholder::after {
-            content: "[ 預留照片位置：Cover / Campus ]";
-            font-family: var(--font-ming);
+        .school-photo-container {
+            width: 100%;
+            max-width: 600px; /* 可依據你版塊的實際寬度調整 */
+            height: auto;
+            overflow: hidden;
+            border-radius: 8px; /* 邊角微調，非必要 */
+        }
+
+        .school-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持比例並自動填滿版塊 */
+         display: block;
+
         }
 
         .hero-text-box h1 {
