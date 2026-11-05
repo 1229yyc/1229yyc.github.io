@@ -141,6 +141,34 @@
   object-fit: cover;    /* 關鍵：自動裁切並填滿容器，保持比例不變形 */
   display: block;       /* 消除圖片下方預設的微小空白隙縫 */
 }
+        .place-photo-container {
+  width: 100%;          /* 隨父層寬度縮放 */
+  max-width: 100%;      /* 不超過父層 */
+  height: 220px;        /* 請依據你的設計自訂高度，例如 250px 或 300px */
+  overflow: hidden;     /* 關鍵：徹底切除超出容器範圍的內容 */
+  border-radius: 8px;   /* 可選：若需要圓角效果 */
+}
+
+.place-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* 關鍵：自動裁切並填滿容器，保持比例不變形 */
+  display: block;       /* 消除圖片下方預設的微小空白隙縫 */
+}
+        .podcastclass-photo-container {
+  width: 100%;          /* 隨父層寬度縮放 */
+  max-width: 100%;      /* 不超過父層 */
+  height: 220px;        /* 請依據你的設計自訂高度，例如 250px 或 300px */
+  overflow: hidden;     /* 關鍵：徹底切除超出容器範圍的內容 */
+  border-radius: 8px;   /* 可選：若需要圓角效果 */
+}
+
+.podcastclass-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* 關鍵：自動裁切並填滿容器，保持比例不變形 */
+  display: block;       /* 消除圖片下方預設的微小空白隙縫 */
+}
 
         .work-card h3 {
             font-size: 1.3rem;
@@ -232,13 +260,15 @@
             </div>
             <div class="works-grid">
                 <div class="work-card">
-                    <div class="img-placeholder-lg">[ 預留課堂紀錄片 / 訪談畫面 照片位置 ]</div>
+                    <div class="place-photo-container">
+  <img src="graph/place.jpg" alt="地方創生" class="place-photo" /></div>
                     <div class="work-meta">社區產業行銷專題</div>
                     <h3>花蓮在地創生短片</h3>
                     <p class="work-desc">學生深入花蓮在地社區與部落，結合行銷概念與影像實作，為在地產業紀錄並推廣轉型成果。</p>
                 </div>
                 <div class="work-card">
-                    <div class="img-placeholder-lg">[ 預留廣播節目 / 錄音室側拍 照片位置 ]</div>
+                    <div class="podcastclass-photo-container">
+  <img src="graph/podcastclass.jpg" alt="播客" class="podcastclass-photo" /></div>
                     <div class="work-meta">聲音敘事與廣播實務</div>
                     <h3>聲音劇場與 Podcast 專輯</h3>
                     <p class="work-desc">利用系所實習廣播電臺設施，從腳本撰寫、收音採訪到後製混音，獨立完成之優質廣播節目。</p>
