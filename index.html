@@ -125,18 +125,7 @@
             object-fit: cover; /* 保持比例並自動填滿版塊 */
          display: block;
 
-        }
-
-        .hero-text-box h1 {
-            font-size: 2.4rem;
-            font-weight: 400;
-            line-height: 1.4;
-            margin-bottom: 1.5rem;
-            border-left: 3px solid var(--accent-red);
-            padding-left: 1rem;
-        }
-
-        .watch-photo-container {
+            .watch-photo-container {
             width: 100%;
             max-width: 600px; /* 可依據你版塊的實際寬度調整 */
             height: auto;
@@ -145,6 +134,21 @@
         }
 
         .watch-photo {
+            width: 100%;
+            height: 80%;
+            object-fit: cover; /* 保持比例並自動填滿版塊 */
+         display: block;
+
+        }
+            .podcast-photo-container {
+            width: 100%;
+            max-width: 600px; /* 可依據你版塊的實際寬度調整 */
+            height: auto;
+            overflow: hidden;
+            border-radius: 8px; /* 邊角微調，非必要 */
+        }
+
+        .podcast-photo {
             width: 100%;
             height: 80%;
             object-fit: cover; /* 保持比例並自動填滿版塊 */
@@ -168,27 +172,24 @@
 
         }
 
+        .hero-text-box h1 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--accent-red);
+            padding-left: 1rem;
+        }
+
+
+       
+
         .hero-text-box p {
             color: var(--text-sub);
             font-size: 0.95rem;
             text-align: justify;
         }
 
-        .podcast-photo-container {
-            width: 100%;
-            max-width: 600px; /* 可依據你版塊的實際寬度調整 */
-            height: auto;
-            overflow: hidden;
-            border-radius: 8px; /* 邊角微調，非必要 */
-        }
-
-        .podcast-photo {
-            width: 100%;
-            height: 80%;
-            object-fit: cover; /* 保持比例並自動填滿版塊 */
-         display: block;
-
-            }
         
         /* 版塊區劃 */
         .section-header {
@@ -382,7 +383,7 @@
                     <p>培育聲音劇場、Podcasting 與廣播企劃人才，透過聲響探索當代社會議題。</p>
                 </div>
                 <div class="grid-item">
-                    <div class="watch-photo-container">
+                    <div class="video-photo-container">
   <img src="graph/video.jpg" alt="學生作品" class="video-photo" /></div>
                     <div class="item-num">FEATURE 03</div>
                     <h3>跨領域媒體實作</h3>
